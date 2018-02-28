@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetRestaurants">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRestaurantsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantsResult" type="tns:ArrayOfRestaurant" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRestaurant">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Restaurant" nillable="true" type="tns:Restaurant" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Restaurant">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="restaurantID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="restaurantName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="restaurantAdress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="restaurantCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="openHours" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mailAdress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="foodType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="priceClass" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTableResarvations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTableResarvationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableResarvationsResult" type="tns:ArrayOfTableReservation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTableReservation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TableReservation" nillable="true" type="tns:TableReservation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TableReservation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="reservationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtableID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="personName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="personMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="personPhoneNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="guestAmount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="reservationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="reservationTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDiningTables">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDiningTablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDiningTablesResult" type="tns:ArrayOfDiningTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDiningTable">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DiningTable" nillable="true" type="tns:DiningTable" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DiningTable">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="dtableID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="restaurantID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="seatAmount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRestaurantRating">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRestaurantRatingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantRatingResult" type="tns:ArrayOfRestaurantRating" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRestaurantRating">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RestaurantRating" nillable="true" type="tns:RestaurantRating" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RestaurantRating">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ratingID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="restaurantID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reviewerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ratingScore" type="s:float" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetRestaurantsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurants" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTableResarvationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTableResarvations" />
+  </wsdl:message>
+  <wsdl:message name="GetTableResarvationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableResarvationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDiningTablesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDiningTables" />
+  </wsdl:message>
+  <wsdl:message name="GetDiningTablesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDiningTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantRatingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurantRating" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantRatingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantRatingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="T4CsharpWebService1Uppg2Soap">
+    <wsdl:operation name="GetRestaurants">
+      <wsdl:input message="tns:GetRestaurantsSoapIn" />
+      <wsdl:output message="tns:GetRestaurantsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableResarvations">
+      <wsdl:input message="tns:GetTableResarvationsSoapIn" />
+      <wsdl:output message="tns:GetTableResarvationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiningTables">
+      <wsdl:input message="tns:GetDiningTablesSoapIn" />
+      <wsdl:output message="tns:GetDiningTablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantRating">
+      <wsdl:input message="tns:GetRestaurantRatingSoapIn" />
+      <wsdl:output message="tns:GetRestaurantRatingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="T4CsharpWebService1Uppg2Soap" type="tns:T4CsharpWebService1Uppg2Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRestaurants">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableResarvations">
+      <soap:operation soapAction="http://tempuri.org/GetTableResarvations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiningTables">
+      <soap:operation soapAction="http://tempuri.org/GetDiningTables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantRating">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurantRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T4CsharpWebService1Uppg2Soap12" type="tns:T4CsharpWebService1Uppg2Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRestaurants">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurants" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableResarvations">
+      <soap12:operation soapAction="http://tempuri.org/GetTableResarvations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiningTables">
+      <soap12:operation soapAction="http://tempuri.org/GetDiningTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantRating">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurantRating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="T4CsharpWebService1Uppg2">
+    <wsdl:port name="T4CsharpWebService1Uppg2Soap" binding="tns:T4CsharpWebService1Uppg2Soap">
+      <soap:address location="http://localhost:49989/T4CsharpWebService1Uppg2.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T4CsharpWebService1Uppg2Soap12" binding="tns:T4CsharpWebService1Uppg2Soap12">
+      <soap12:address location="http://localhost:49989/T4CsharpWebService1Uppg2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
